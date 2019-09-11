@@ -1,3 +1,4 @@
+var mysqlAuth = require("./mysqlAuth");
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 
