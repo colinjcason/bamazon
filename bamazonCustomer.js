@@ -21,7 +21,7 @@ function showProducts() {
         if (err) throw err;
         console.log("Welcome to Bamazon for customers!\nHere is the list of items available for purchase: ");
         for (var i = 0; i < res.length; i++) {
-            console.log(res[i].id + ".) " + res[i].name + " || Price: " + res[i].price);
+            console.log(res[i].id + ".) " + res[i].name + " || Price: $" + res[i].price);
         }
 
         startProgram();
