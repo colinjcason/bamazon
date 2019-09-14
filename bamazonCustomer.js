@@ -70,7 +70,8 @@ function buyProduct(id, quantity) {
         } else {
             connection.query("UPDATE products SET ? WHERE ?",
                 [{
-                        stock: stock - quantity
+                        stock: stock - quantity,
+                        product_sales: stock * quantity
                     },
                     {
                         name: productName
