@@ -14,9 +14,7 @@ The user will be show a list of items available for sale and asked what they wou
 
 If the user asks for more that was is currently held in stock, the user will be asked to request a smaller amount
 
-![image2](images/Capture2.PNG)
-
-
+![image2](images/Capture4.PNG)
 
 ![image3](images/Capture3.PNG)
 
