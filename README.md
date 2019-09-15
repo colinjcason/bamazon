@@ -16,6 +16,6 @@ If the user asks for more that was is currently held in stock, the user will be 
 
 ![image2](images/Capture4.PNG)
 
-![image3](images/Capture3.PNG)
+![image3](images/Capture2.PNG)
 
-![image4](images/Capture4.PNG)
+![image4](images/Capture3.PNG)
