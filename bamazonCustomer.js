@@ -80,27 +80,23 @@ function buyProduct(id, quantity) {
                 function (err, res) {
                     if (err) throw err;
                     console.log("You purchased " + quantity + " " + productName + "(s) " + "for $" + (price * quantity) + "!");
-        shopAgain();
-
+                    shopAgain();
                 });
         };
     });
 }
 
 function shopAgain() {
-    inquirer.prompt([
-        {
-            name: "shop",
-            message: "Would you like to shop some more?",
-            type: "confirm",
-            default: true
-        }
-    ]).then(function(answer) {
-        if(answer.shop === true) {
-            showProducts();            
-        }
-        else {
-            connection.end();            
+    inquirer.prompt([{
+        name: "shop",
+        message: "Would you like to shop some more?",
+        type: "confirm",
+        default: true
+    }]).then(function (answer) {
+        if (answer.shop === true) {
+            showProducts();
+        } else {
+            connection.end();
         }
     });
 }

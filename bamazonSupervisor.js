@@ -54,6 +54,7 @@ function viewSales() {
             data.push(output);
         });        
         console.log(table(data));
+        startProgram();
     });
 }
 
@@ -74,6 +75,7 @@ function createDept() {
         connection.query(query, function(err, res) {
             if(err) throw err;
             console.log(answer.name + " successfully created!");
+            startProgram();
         });
     });
 }
