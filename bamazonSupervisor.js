@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err) {
     if(err) throw err;
-    console.log("Welcome toa Bamazon for Supervisors!");
+    console.log("Welcome to Bamazon for Supervisors!");
     startProgram();
 });
 
@@ -40,18 +40,40 @@ function startProgram() {
 
 function viewSales() {
     var data = [["Department ID", "Department Name", "Overhead Costs", "Total Sales", "Total Profit"]];
-    var query = "SELECT departments.id, departments.department_name, departments.overhead_costs, SUM(products.product_sales) FROM products RIGHT JOIN departments ON departments.id = products.id";
+    var query = "SELECT departments.id, departments.department_name, departments.overhead_costs, SUM(products.product_sales) AS total_sales FROM products RIGHT JOIN departments ON products.department = departments.department_name GROUP BY department";
 
     connection.query(query, function(err, res) {
         if(err) throw err;
-        output = [];
-
-        res.forEach(element => {
-            output.push(element.id);
+        res.forEach(function(info) {
+            output = [];
+            output.push(info.id);
+            output.push(info.department_name);
+            output.push(info.overhead_costs);
+            output.push(info.total_sales);
+            output.push(info.total_sales - info.overhead_costs);
             data.push(output);
-        });
-
+        });        
         console.log(table(data));
-        
+    });
+}
+
+function createDept() {
+    inquirer.prompt([
+        {
+            name: "name",
+            type: "input",
+            message: "What is the name of the new department?"
+        },
+        {
+            name: "cost",
+            type: "input",
+            message: "What is the overhead costs of the new department?"
+        }
+    ]).then(function(answer) {
+        var query = `INSERT INTO departments (department_name, overhead_costs) VALUES ("${answer.name}", "${answer.cost}")`;
+        connection.query(query, function(err, res) {
+            if(err) throw err;
+            console.log(answer.name + " successfully created!");
+        });
     });
 }
