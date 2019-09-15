@@ -2,9 +2,9 @@
 
 ## This app contains 3 unique functions:
 
-* Customer View
-* Manager View
-* Supervisor View
+* Customer View - which allows the purchase of products.
+* Manager View - allows viewing/editing product info and creating new products.
+* Supervisor View - allows viewing department info and adding new departments.
 
 ### Customer View
 
