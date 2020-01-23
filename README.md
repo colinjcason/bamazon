@@ -21,3 +21,15 @@ The program will continue once a valid selection has been entered;
 ![image3](images/Capture2.PNG)
 
 ![image4](images/Capture3.PNG)
+
+## Prerequisites
+In order to run this program, you must have NodeJS installed on your machine. Follow the steps listed [here](https://nodejs.org/en/download/) on the NodeJS website. This project is an introduction to NodeJS and the different packages available to you. Once Node is installed, install the dependencies with npm install.
+```
+npm install
+```
+You are ready to code!
+
+## Built With
+* NodeJS
+* MySQL
+* Javascript/jQuery
